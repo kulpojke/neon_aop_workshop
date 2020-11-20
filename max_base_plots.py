@@ -333,7 +333,10 @@ def downLoadByProduct(dpID, site, date, savedir='data', metadict=False):
                     exec(s)
         return(frames)
 #%%
-def 
+def get_plant_locs_for_obs_plot(plotID, locmap=vst_mappingandtagging):
+    for namedLoc in locmap['namedLocation']:
+
+
 
 #%%
 # %%
