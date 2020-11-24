@@ -334,7 +334,13 @@ def downLoadByProduct(dpID, site, date, savedir='data', metadict=False):
         return(frames)
 #%%
 def get_plant_locs_for_obs_plot(plotID, locmap=vst_mappingandtagging):
-    for namedLoc in locmap['namedLocation']:
+    for x in locmap['namedLocation']:
+        response = requests.get(f'http://data.neonscience.org/api/v0/locations/{x}')
+        properties = response.json()['data']['locationProperties']
+        vals = response.json()['data']
+        # we do not need locationProperties or locationChildren
+        _ = vals.pop('locationProperties')
+        _ = vals.pop('locationChildren')
 
 
 
