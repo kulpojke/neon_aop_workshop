@@ -333,6 +333,10 @@ def downLoadByProduct(dpID, site, date, savedir='data', metadict=False):
                     exec(s)
         return(frames)
 #%%
+
+'''TODO: it woould be nice to finish this so I don't have to
+resort to R for this step
+'''
 def get_plant_locs_for_obs_plot(plotID, locmap=vst_mappingandtagging):
     for x in locmap['namedLocation']:
         response = requests.get(f'http://data.neonscience.org/api/v0/locations/{x}')
