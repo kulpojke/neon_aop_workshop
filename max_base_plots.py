@@ -362,3 +362,11 @@ vst_mappingandtagging =frames['vst_mappingandtagging']
 vst_mappingandtagging.dropna(subset=['pointID'], inplace=True)
 vst_mappingandtagging
 # %%
+
+def make_availability_dict(dpIDs, sites):
+    available = dict()
+    for site in sites:
+        for dpID in dpIDs:
+            id_dict = {dpID : findDatesAvailable(dpID, site)}
+        available[site] = id_dict
+    return(available)
