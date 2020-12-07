@@ -82,7 +82,7 @@ go <- function(notfirst, sites){
   
   # Merge tables to join tree-specific data with the geospatial data
   veg <- merge(vst_apparentindividual, vegmap, by=c("individualID","namedLocation","domainID","siteID","plotID"))
-  write.table(veg, "exact_locations_within_plots.csv", append=notfirst, sep=",", col.names=!notfirst, row.names=FALSE, quote=FALSE)
+  write.table(veg, "exact_locations_within_plots.csv", append=notfirst, sep=",", col.names=!notfirst, row.names=FALSE, quote=TRUE)
   notfirst <- TRUE
   return(notfirst)
 }
